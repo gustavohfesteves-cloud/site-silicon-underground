@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Silicon Underground | Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RESET E BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Coloque o nome da sua imagem de fundo aqui */
+            background-image: url('fundo-batalha.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito parallax simples */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* CAMADA ESCURA PARA MELHORAR LEITURA (OPCIONAL) */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Escurece o fundo em 40% */
+            z-index: -1;
+        }
+
+        /* HEADER / BARRA DO TOPO */
+        .header-bar {
+            background-color: rgba(186, 142, 154, 0.9); /* Cor rosada da imagem */
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            text-align: left;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* BOTÃO DE DOAÇÃO (O PEQUENO) */
+        .donate-badge {
+            background: white;
+            color: #333;
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: -10px;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* OS CARTÕES DE LINKS */
+        .link-card {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-left: 5px solid transparent; /* Para hover */
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            border-left: 5px solid #d63031; /* Vermelho Cyberpunk */
+        }
+
+        /* TEXTO DENTRO DO CARTÃO */
+        .card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Oswald', sans-serif; /* Fonte estilo poster se tiver */
+        }
+
+        .card-subtitle {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        /* SELECTOR DE IDIOMA (ESTÉTICO) */
+        .lang-select {
+            margin-top: 5px;
+            padding: 2px 5px;
+            font-size: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #f9f9f9;
+            width: fit-content;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ÍCONES À DIREITA */
+        .card-icon {
+            font-size: 1.5rem;
+            color: #5a2d3c; /* Tom vinho escuro */
+            width: 40px;
+            text-align: center;
+        }
+
+        /* AJUSTES PARA MOBILE */
+        @media (max-width: 400px) {
+            .card-title { font-size: 1rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">
+        http://TheSiliconUnderground.com
+    </div>
+
+    <div class="container">
+
+        <a href="#" class="donate-badge">Doe, ajude-nos a continuar trabalhando</a>
+        <a href="LINK_DA_HQ_AQUI" class="link-card">
+            <div class="card-content">
+                <span class="card-title">The Silicon Underground HQ</span>
+                <div class="lang-select">
+                    IDIOMA: PORTUGUÊS BR <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="card-icon">
+                <i class="fas fa-book-open"></i> </div>
+        </a>
+
+        <a href="LINK_DA_PLAYLIST_AQUI" class="link-card">
+            <div class="card-content">
+                <span class="card-title">The Silicon Underground</span>
+                <span class="card-subtitle">SÉRIE ANIMADA</span>
+                <div class="lang-select">
+                    IDIOMA: PORTUGUÊS BR <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="card-icon">
+                <i class="fas fa-play-circle"></i> </div>
+        </a>
+
+        <a href="LINK_DOS_COVERS_AQUI" class="link-card">
+            <div class="card-content">
+                <span class="card-title">Covers de Guitarra</span>
+            </div>
+            <div class="card-icon">
+                <i class="fas fa-guitar"></i> </div>
+        </a>
+
+        <a href="mailto:seuemail@email.com" class="link-card">
+            <div class="card-content">
+                <span class="card-title">Contato</span>
+            </div>
+            <div class="card-icon">
+                <i class="fas fa-address-card"></i> </div>
+        </a>
+
+    </div>
+
+</body>
+</html>
