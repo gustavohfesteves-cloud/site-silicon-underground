@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoio | Guitarnonsense</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILO BASE */
+        body {
+            background-image: url('fundo-batalha.jpeg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px; max-width: 500px; margin: 0 auto;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.9); z-index: -1; /* Fundo bem escuro para foco */
+        }
+
+        /* BOTÃO VOLTAR */
+        .btn-voltar {
+            align-self: flex-start; background: rgba(255,255,255,0.1); color: #fff;
+            padding: 10px 20px; text-decoration: none; border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.3); margin-bottom: 25px;
+            font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
+        }
+
+        /* CARTÃO DE DOAÇÃO */
+        .donate-card {
+            background: #fff; padding: 30px 20px; border-radius: 15px; width: 100%;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            border-top: 6px solid #25D366; /* Verde Pix */
+        }
+
+        .donate-title {
+            font-size: 1.4rem; font-weight: 800; color: #2d3436; margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .donate-text {
+            font-size: 0.9rem; color: #636e72; margin-bottom: 20px; line-height: 1.5;
+        }
+
+        /* ÁREA DO QR CODE */
+        .qr-frame {
+            border: 2px dashed #b2bec3; padding: 10px; border-radius: 10px;
+            margin: 0 auto 20px auto; width: 220px; height: 220px;
+            display: flex; align-items: center; justify-content: center; background: #f9f9f9;
+        }
+
+        .qr-image {
+            width: 100%; height: 100%; object-fit: contain;
+        }
+
+        /* BOTÃO COPIAR */
+        .copy-box {
+            display: flex; gap: 10px; margin-top: 10px;
+        }
+
+        .input-pix {
+            flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px;
+            background: #f1f2f6; color: #555; font-family: monospace; font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .btn-copy {
+            background: #25D366; color: white; border: none; padding: 0 20px;
+            border-radius: 6px; font-weight: bold; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.2s;
+        }
+        .btn-copy:active { transform: scale(0.95); }
+
+        .pix-icon { color: #32bca5; font-size: 2rem; margin-bottom: 10px; }
+
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> MENU</a>
+
+    <div class="donate-card">
+        <i class="fas fa-qrcode pix-icon"></i>
+        <h2 class="donate-title">Expansão do Cluster</h2>
+        <p class="donate-text">
+            Sua doação financia softwares, renders e café.<br>
+            <strong>Qualquer valor ajuda a manter a guerra.</strong>
+        </p>
+
+        <div class="qr-frame">
+            <img src="pix.jpeg" alt="QR Code Pix" class="qr-image">
+        </div>
+
+        <p style="font-size: 0.8rem; color: #888; margin-bottom: 5px;">Chave Pix (Copie e Cole):</p>
+        
+        <div class="copy-box">
+            <input type="text" class="input-pix" value="SUA_CHAVE_PIX_AQUI" id="chavePix" readonly>
+            
+            <button class="btn-copy" onclick="copiarChave()">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+        <span id="msg-copy" style="display:none; color: green; font-size: 0.8rem; margin-top: 5px; font-weight: bold;">Chave Copiada!</span>
+    </div>
+
+    <script>
+        function copiarChave() {
+            var copyText = document.getElementById("chavePix");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* Para Mobile */
+            navigator.clipboard.writeText(copyText.value);
+            
+            // Mostra mensagem de sucesso
+            var msg = document.getElementById("msg-copy");
+            msg.style.display = "block";
+            setTimeout(function(){ msg.style.display = "none"; }, 3000);
+        }
+    </script>
+
+</body>
+</html>
